@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 belongs_to :company
-belongs_to :supervisor, :class_name => "User"
+has_one :supervisor
 has_many :groups
 has_many :courses, :through => :assignments
 has_many :subordinates, :through => :supervisors
